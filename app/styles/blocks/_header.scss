@@ -1,0 +1,80 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 165px 0 150px;
+    background: url('../img/BG-Header.png') no-repeat center / cover;
+    height: 100vh;
+
+    &__logo {
+        width: 195px;
+        margin-bottom: 160px;
+    }
+    &__title {
+        margin-bottom: 100px;
+    }
+    .header__title {
+        color: #ffffff;
+        padding: 0 0 45px 0;
+
+        &::after {
+            height: 2px;
+            background-color: #ffffff;
+        }
+    }
+    &__more {
+        color: #ffffff;
+        margin-bottom: 70px;
+        transition-duration: .3s;
+        &:hover {
+            background-color: #ada074;
+        }
+    }
+    &__arrow-down {
+        padding: 0 10px;
+        font-size: 17px;
+        color: #ffffff;
+        transition-duration: .1s;
+        &:hover {
+            transform: scale(1.5);
+        }
+    }
+}
+
+.title {
+    font-size: $blockTitle-size;
+    font-family: $primary-font;
+    text-transform: uppercase;
+    letter-spacing: 8px;// отступ между буквами
+    line-height: 1.2;
+    position: relative;
+    text-align: center;
+    padding: 0 0 35px 0;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 80px;
+        height: 1px;
+        background-color: #000000;
+        transform: translateX(-50%);
+    }
+
+    &__description {
+        font-size: 26px;
+        font-weight: normal;
+        text-transform: lowercase;
+        font-family: $text-font;
+    }
+}
+
+.btn-more {
+    padding: 15px 40px;
+    font-size: 16px;
+    font-family: $text-font;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid #ffffff;
+}
