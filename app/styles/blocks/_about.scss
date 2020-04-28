@@ -2,34 +2,28 @@
     padding: 180px 0 90px 0;
     position: relative;
 
-    &__menu {
-        width: 100%;
+    &__menu-nav {
         position: absolute;
         top: 0;
         border-bottom: 1px solid #f2f2f2;
-    }
-    &__menu-nav {
-        list-style-type: none;
+        padding: 20px 0;
     }
     
     &__body {
         max-width: 823px;
         margin: 0 auto;
     }
-
     &__header {
         margin: 0px 0px 65px 0px;
     }
-
     &__title {
         margin: 0px 0px 30px 0px;
     }
-
     &__text {
-        max-width: 688px;
+        max-width: 695px;
+        font-size: $primaryText-size;
         color: #868585;
-        font-size: 14px;
-        font-weight: 400;
+        font-family: $secondary-text-font;
         text-align: center;
         line-height: 20.89px;
         margin: 0 auto;
@@ -37,10 +31,8 @@
 
     &__row {
         display: flex;
-        font-size: 0;
         margin: 0px -15px;
     }
-
     &__column {
         padding: 0 15px;
         flex: 0 0 33.333%;
@@ -50,7 +42,8 @@
 .menu-nav {
     display: flex;
     justify-content: center;
-    padding: 20px 0;
+    width: 100%;
+    list-style-type: none;
 
     &__item {
         padding: 0 25px;
@@ -63,7 +56,7 @@
         font-size: 15px;
         color: $links-color;
     }
-    &__link:active {
+    &__link:hover {
         color: $active-link-color;
     }
 }
@@ -79,19 +72,20 @@
         align-items: center;
         margin: 0px auto 35px auto;
     }
-
     &__title {
         text-align: center;
         color: #000000;
         font-size: 22px;
+        font-family: $text-font;
         text-transform: uppercase;
         letter-spacing: 3.52px;
         margin: 0 0 35px 0;
     }
-
     &__text {
         text-align: center;
-        font-size: 14px;
+        font-size: $primaryText-size;
         color: #868585;
+        font-family: $secondary-text-font;
+        line-height: 1.5;
     }
 }

@@ -2,7 +2,7 @@
 
 ## Clone the project:
 
-git clone https://github.com/KirichenkoOleg/TestMerge-conflict.git
+git clone https://github.com/KirichenkoOleg/Design-company.git
 
 ## Upload npm packages:
 
