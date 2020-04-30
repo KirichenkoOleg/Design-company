@@ -56,7 +56,7 @@
         font-size: 15px;
         color: $links-color;
     }
-    &__link:hover {
+    &__link_active {
         color: $active-link-color;
     }
 }
