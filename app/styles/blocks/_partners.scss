@@ -1,0 +1,21 @@
+.partners {
+    padding: 90px 0 105px;
+    background: url('../img/Partners/BG-Partners.png') no-repeat center / cover;
+
+    &__title {
+        font-size: 30px;
+        color: #ffffff;
+        font-family: $secondary-text-font;
+        font-weight: normal;
+        text-align: center;
+        margin-bottom: 95px;
+    }
+    &__container-logo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        max-width: 590px;
+        margin: 0 auto;
+    }
+}
