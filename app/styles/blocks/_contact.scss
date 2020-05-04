@@ -1,0 +1,117 @@
+.contact {
+    padding: 180px 0 100px;
+
+    &__title {
+        margin-bottom: 115px;
+    }
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        max-width: 720px;
+        margin: 0 auto;
+    }
+    &__form {}
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 280px;
+    }
+    &__description {
+        font-size: 16px;
+        color: #000000;
+        font-family: $secondary-text-font;
+        line-height: 1.8;
+        margin-bottom: 35px;
+    }
+    &__person {
+        font-size: 18px;
+        font-family: $primary-font;
+        margin-bottom: 20px;
+    }
+    &__social {
+        display: flex;
+        margin-bottom: 20px;
+    }
+    &__link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        width: 30px;
+        text-decoration: none;
+        color: #000000;
+        border: 2px solid #000000;
+        border-radius: 50%;
+        &:first-child {
+            margin-right: 10px;;
+        }
+    }
+
+    &__str-email {
+        font-size: 16px;
+        color: #000000;
+        font-family: $secondary-text-font;
+    }
+    &__email {
+        font-size: 18px;
+        font-family: $primary-font;
+    }
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    max-width: 380px;
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 70px;
+    }
+    &__label {
+        display: flex;
+        flex-direction: column;
+        width: 160px;
+        font-size: 14px;
+        color: #000000;
+        font-family: $primary-font;
+        text-transform: uppercase;
+        line-height: 1.2;
+        &_text {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+    }
+    &__input {
+        padding: 5px;
+        font-size: 15px;
+        background-color: #f8f7f7;
+        border: none;
+        border-top: 1px solid #000000;
+        margin-top: 15px;
+    }
+    &__textarea {
+        height: 120px;
+        background-color: #f8f7f7;
+        border: none;
+        border-top: 1px solid #000000;
+        padding: 5px;
+        margin-top: 15px;
+    }
+    input:focus,
+    textarea:focus {
+        outline: none;
+    }
+    &__btn {
+        font-size: 14px;
+        color: #000000;
+        font-family: $primary-font;
+        text-transform: uppercase;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+}
