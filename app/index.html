@@ -6,36 +6,40 @@
     <title>"Binary" Design-company</title>
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <script src="https://kit.fontawesome.com/e9a6666e7b.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/main.js"></script>
+    <!-- <script src="./js/main.js"></script> -->
 </head>
 
 <body>
-    <header class="header">
-        <img src="./img/Logo.png" alt="Site logo" class="header__logo">
-        <h1 class="header__title title">Clear, smart, attractive design 
-            <br><span class="title__description">for your app, logo, website</span>
-        </h1>
-        <a href="" class="header__more btn-more">Read more</a>
-        <a href="" class="header__arrow-down"> <i class="fas fa-chevron-down"></i> </a>
+    <header class="header" id="home">
+        <div class="header__wrapper">
+            <img src="./img/Logo.png" alt="Site logo" class="header__logo">
+            <h1 class="header__title title">Clear, smart, attractive design 
+                <br><span class="title__subtitle">for your app, logo, website</span>
+            </h1>
+            <div class="header__footer">
+                <a href="" class="header__more btn-more">Read more</a>
+                <a href="#about" class="header__arrow-down"> <i class="fas fa-chevron-down"></i> </a>
+            </div>
+        </div>
     </header>
     <main>
-        <section class="about">
+        <section class="about" id="about">
 
             <ul class="about__menu-nav menu-nav">
                 <li class="menu-nav__item">
-                    <a href="" class="menu-nav__link">Home</a>
+                    <a href="#home" class="menu-nav__link">Home</a>
                 </li>
                 <li class="menu-nav__item">
-                    <a href="" class="menu-nav__link">About us</a>
+                    <a href="#about" class="menu-nav__link">About us</a>
                 </li>
                 <li class="menu-nav__item">
-                    <a href="" class="menu-nav__link">Portfolio</a>
+                    <a href="#portfolio" class="menu-nav__link">Portfolio</a>
                 </li>
                 <li class="menu-nav__item">
-                    <a href="" class="menu-nav__link">Contact</a>
+                    <a href="#contact" class="menu-nav__link">Contact</a>
                 </li>
+                <li class="menu-nav__item-bg"></li>
             </ul>
 
             <div class="about__body">
@@ -87,7 +91,7 @@
 
             </div>
         </section>
-        <section class="portfolio">
+        <section class="portfolio" id="portfolio">
             <h2 class="portfolio__title title">Portfolio</h2>
             <ul class="portfolio__menu-nav menu-nav">
                 <li class="menu-nav__item">
@@ -113,7 +117,7 @@
             </div>
             <a href="" class="portfolio__more btn-more">Read more</a>
         </section>
-        <section class="partners">
+        <section class="partners" id="partners">
             <h2 class="partners__title">Our partners</h2>
             <div class="partners__container-logo">
                 <img src="./img/Partners/logo/logo.png" alt="Logo icon" class="partners__logo" style="width: 35px; height: 47px;">
@@ -122,7 +126,7 @@
                 <img src="./img/Partners/logo/Alex.png" alt="Logo icon" class="partners__logo" style="width: 111px; height: 40px;">
             </div>
         </section>
-        <section class="contact">
+        <section class="contact" id="contact">
             <h2 class="contact__title title">Contact</h2>
             <div class="contact__body">
                 <form action="" name="userInfo" class="contact__form form">
@@ -176,6 +180,7 @@
         <p class="footer__copirating"> &copy 2015. All Rights Reserved</p>
     </footer>
 
+    <script src="./js/main.js"></script>
     <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
 </body>
 </html>

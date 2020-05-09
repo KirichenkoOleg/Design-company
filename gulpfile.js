@@ -15,9 +15,9 @@ const path = {
 		html: "app/index.html",
 		styles: [
 			"app/styles/main.scss",
-			// "app/styles/**/*.scss"
 		],
 		js: [
+			"app/js/jquery-3.5.1.min.js",
 			"app/js/script.js"
 		],
 		image: "app/img/**/*",
