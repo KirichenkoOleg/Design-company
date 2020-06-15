@@ -1,6 +1,9 @@
 .partners {
-    padding: 90px 0 105px;
+    padding: 90px 0 80px;
     background: url('../img/Partners/BG-Partners.png') no-repeat center / cover;
+    @media screen and (max-width:$md) {
+        padding: 90px 0 50px;
+    }
 
     &__title {
         font-size: 30px;
@@ -9,13 +12,29 @@
         font-weight: normal;
         text-align: center;
         margin-bottom: 95px;
+        @media screen and (max-width:$sm) {
+            margin-bottom: 60px;
+        }
     }
-    &__container-logo {
+    &__items {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        justify-content: center;
+        align-items: center;//выравнять дочерние елем.
         flex-wrap: wrap;
-        max-width: 590px;
-        margin: 0 auto;
+        text-align: center;
+        padding: 0 100px;
+        @media screen and (max-width:$sm) {
+
+        }
     }
+    &__column {
+        flex: 0 1 25%;
+        padding: 0 50px;
+        margin: 0 0 20px 0;
+    }
+    // &__item {}
+}
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
 }

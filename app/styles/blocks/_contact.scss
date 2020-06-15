@@ -1,111 +1,119 @@
-.contact {
+.contacts {
     padding: 180px 0 100px;
+    @media screen and (max-width:$md) {
+        padding: 70px 0 50px;
+    }
     &__title {
         margin-bottom: 115px;
+        @media screen and (max-width:$md) {
+            margin-bottom: 45px;
+        }
     }
-    &__body {
-        display: flex;
-        justify-content: space-between;
+    &__container {
+        // display: flex;
+        // justify-content: space-between;
         max-width: 720px;
         margin: 0 auto;
-        
-        width: 100%;
     }
-    &__info {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        max-width: 280px;
 
-        width: 100%;
+    &__body {
+        display: flex;
+        margin: 0 -25px;
+        @media screen and (max-width:$sm){
+            display: block;
+            margin: 0;
+        }
     }
-    &__description {
-        font-size: 16px;
-        color: #000000;
+    &__column {
+        flex: 0 1 50%;
+        padding: 0 25px;
+    }
+    &__form {
+        text-align: right;
+        @media screen and (max-width:$sm) {
+            text-align: left;
+        }
+    }
+    &__content {
+        max-width: 260px;
+        @media screen and (max-width:$sm) {
+            max-width: none;
+        }
+    }
+    &__text {
+        font-size: 14px;
         font-family: $secondary-text-font;
-        line-height: 1.8;
-        margin-bottom: 35px;
+        line-height: 24px;
+        margin-bottom: 30px;
+        @media screen and (max-width:$sm) {
+            font-size: 18px;
+        }
     }
-    &__person {
-        font-size: 18px;
+    &__name {
+        font-size: 14px;
         font-family: $primary-font;
+        font-weight: 700;
         margin-bottom: 20px;
+        @media screen and (max-width:$sm) {
+            font-size: 18px;
+        }
     }
     &__social {
-        display: flex;
-        margin-bottom: 20px;
-    }
-    &__link {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 30px;
-        width: 30px;
-        text-decoration: none;
-        color: #000000;
-        border: 2px solid #000000;
-        border-radius: 50%;
-        &:first-child {
-            margin-right: 10px;;
+        margin-bottom: 15px;
+        @media screen and (max-width:$sm) {
+            margin-bottom: 30px;
         }
-    }
-
-    &__str-email {
-        font-size: 16px;
-        color: #000000;
-        font-family: $secondary-text-font;
     }
     &__email {
-        font-size: 18px;
-        font-family: $primary-font;
-    }
-}
-.form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    width: 100%;
-    max-width: 380px;
-
-    &__row {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        margin-bottom: 70px;
-    }
-    &__label {
-        display: flex;
-        flex-direction: column;
-        width: 160px;
         font-size: 14px;
-        color: #000000;
-        font-family: $primary-font;
-        text-transform: uppercase;
-        line-height: 1.2;
-        &_text {
-            width: 100%;
-            margin-bottom: 40px;
+        font-family: $secondary-text-font;
+        a {
+            text-decoration: none;
+            color: #000000;
+            font-family: $primary-font;
+            font-weight: 600;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        @media screen and (max-width:$sm) {
+            font-size: 18px;
         }
     }
-    &__input {
-        padding: 5px;
-        font-size: 15px;
-        background-color: #f8f7f7;
-        border: none;
-        border-top: 1px solid #000000;
-        margin-top: 15px;
+}
+.form-contacts {
+    &__body {
+        display: inline-block;
+        width: 100%;
+        max-width: 385px;
+        @media screen and (max-width:$sm) {
+            max-width: none;
+            display: block;
+            text-align: center;
+        }
     }
-    &__textarea {
-        height: 120px;
-        background-color: #f8f7f7;
-        border: none;
-        border-top: 1px solid #000000;
-        padding: 5px;
-        margin-top: 15px;
+    &__row {
+        display: flex;
+        margin: 0 -15px 70px -15px;
+        @media screen and (max-width:$sm) {
+            flex-direction: column;
+            margin-bottom: 50px;
+        }
     }
-    input:focus,
-    textarea:focus {
-        outline: none;
+    &__column {
+        flex: 0 1 50%;
+        padding: 0 15px;
+        @media screen and (max-width:$sm) {
+            margin-bottom: 50px;
+        }
+    }
+    // &__input {}
+    &__label {
+        font-size: 14px;
+        font-family: $primary-font;
+        margin: 0 0 10px 0;
+        text-transform: uppercase;
+        text-align: left;
     }
     &__btn {
         font-size: 14px;
@@ -115,5 +123,41 @@
         border: none;
         background-color: transparent;
         cursor: pointer;
+        margin: 30px 0 0 0;
+        @media screen and (max-width:$sm) {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.input {
+    padding: 10px 0px;
+    background-color: #f8f7f7;
+    font-size: 15px;
+    border-top: 1px solid #000000;
+}
+.social {
+    display: flex;
+    @media screen and (max-width:$sm) {
+        justify-content: center;
+    }
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        width: 30px;
+        text-decoration: none;
+        color: #000000;
+        border: 2px solid #000000;
+        border-radius: 50%;
+        margin: 0 15px 0 0;
+        @media screen and (max-width:$sm) {
+            height: 50px;
+            width: 50px;
+            font-size: 24px;
+            margin: 0 20px;
+        }
     }
 }

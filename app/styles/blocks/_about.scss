@@ -1,6 +1,9 @@
 .about {
-    padding: 180px 0 90px 0;
+    padding: 180px 0 60px 0;
     position: relative;
+    @media screen and (max-width:$md) {
+        padding: 120px 0 30px 0;
+    }
 
     &__menu-nav {
         position: absolute;
@@ -17,7 +20,7 @@
         }
     }
     &__body {
-        max-width: 823px;
+        max-width: 850px;
         margin: 0 auto;
     }
     &__header {
@@ -27,7 +30,8 @@
         margin: 0px 0px 30px 0px;
     }
     &__text {
-        max-width: 695px;
+        max-width: 700px;
+        padding: 0 10px;
         font-size: $primaryText-size;
         color: #868585;
         font-family: $secondary-text-font;
@@ -39,10 +43,21 @@
     &__row {
         display: flex;
         margin: 0px -15px;
+        @media screen and (max-width:$md) {
+            flex-wrap: wrap;
+            margin: 0px;
+        }
     }
     &__column {
-        padding: 0 15px;
         flex: 0 1 33.333%;
+        max-width: 33.333%;
+        padding: 0 15px;
+        margin-bottom: 30px;
+        @media screen and (max-width:$md) {
+            flex: 0 1 100%;
+            max-width: 100%;
+            margin-bottom: 50px;
+        }
     }
 }
 
@@ -67,18 +82,6 @@
     &__link_active {
         color: $active-link-color;
     }
-    &__item-bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-    // &__item-bg_scrolled {
-    //     background-color: rgba(0, 0, 0, 0.3);
-    //     background-color: #f3f3f3;
-    //     border-bottom: 2px solid #ffffff;
-    // }
 }
 
 .item-about {
@@ -91,6 +94,13 @@
         justify-content: center;
         align-items: center;
         margin: 0px auto 35px auto;
+        &_left img {
+            position: relative;
+            left: 5px;
+        }
+        @media screen and (max-width:$md) {
+            margin-bottom: 25px;
+        }
     }
     &__title {
         text-align: center;
@@ -100,6 +110,9 @@
         text-transform: uppercase;
         letter-spacing: 3.52px;
         margin: 0 0 35px 0;
+        @media screen and (max-width:$md) {
+            margin-bottom: 10px;
+        }
     }
     &__text {
         text-align: center;

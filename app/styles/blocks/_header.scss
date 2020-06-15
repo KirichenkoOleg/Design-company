@@ -1,14 +1,20 @@
 .header {
     padding: 80px 0;
-    background: url('../img/BG-Header.png') no-repeat center / cover;
+    background: url('../img/BG-Header.png') no-repeat center / cover fixed;
     height: 100vh;
+    @media screen and (max-width:$md) {
+        padding: 30px 0;
+    }
+    @media screen and (max-width:$sm) {
+        padding: 20px 0;
+    }
     &__wrapper {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        max-width: 1100px;
         height: 100%;
+        max-width: 900px;
         margin: 0 auto;
     }
     &__logo {
@@ -19,20 +25,12 @@
         flex-direction: column;
         align-items: center;
     }
+
     &__title {
         margin-bottom: 20px;
     }
-    .header__title {
-        color: #ffffff;
-        padding: 0 0 45px 0;
 
-        &::after {
-            height: 2px;
-            background-color: #ffffff;
-        }
-    }
     &__more {
-        color: #ffffff;
         margin-bottom: 50px;
         transition-duration: .3s;
         &:hover {
@@ -50,15 +48,21 @@
     }
 }
 .title {
+    padding: 0 0 35px 0;
     font-size: $blockTitle-size;
     font-family: $primary-font;
     text-transform: uppercase;
     letter-spacing: 8px;// отступ между буквами
     line-height: 1.2;
-    position: relative;
     text-align: center;
-    padding: 0 0 35px 0;
-
+    position: relative;
+    @media screen and (max-width:$md) {
+        font-size: 28px;
+    }
+    @media screen and (max-width:$sm) {
+        font-size: 20px;
+        padding: 25px;
+    }
     &::after {
         content: "";
         position: absolute;
@@ -70,18 +74,42 @@
         transform: translateX(-50%);
     }
 
+    &_primary {
+        padding: 0 0 45px 0;
+        color: #ffffff;
+        &::after {
+            height: 2px;
+            background-color: #ffffff;
+        }
+    }
+
     &__subtitle {
         font-size: 26px;
         font-weight: normal;
         text-transform: lowercase;
         font-family: $text-font;
+        @media screen and (max-width:$md) {
+            font-size: 18px;
+        }
+        @media screen and (max-width:$sm) {
+            font-size: 16px;
+        }
     }
 }
 .btn-more {
     padding: 15px 40px;
+    color: #ffffff;
     font-size: 16px;
     font-family: $text-font;
     text-transform: uppercase;
     text-decoration: none;
     border: 1px solid #ffffff;
+    &_b {
+        color: #000000;
+        border-color: #000000;
+    }
+    @media screen and (max-width:$sm) {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
 }

@@ -53,11 +53,11 @@ function script() {
 
 function css() {
 	return src(path.source.styles)
-		//.pipe(sourcemaps.init())// активация sourcemaps
+		.pipe(sourcemaps.init())// активация sourcemaps
 		.pipe(sass().on('error', sass.logError))
 		.pipe(concat('style.css'))
 		//.pipe(cleanCSS()) //минификация
-		//.pipe(sourcemaps.write())// активация sourcemaps
+		.pipe(sourcemaps.write())// активация sourcemaps
 		.pipe(dest(path.build.css))
 		.pipe(reload({ stream: true }));
 }

@@ -52,3 +52,25 @@
 h1, h2, h3, h4, h5, h6, a, p, span {
     line-height: 1.0;
 }
+
+//----------------------------------------------------------------- общие стартовые стили
+
+// <input>-------------------------------------------
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.input {
+    width: 100%;
+    border: none;
+}
+textarea {
+    resize: none;
+    height: 117px;
+    padding: 10px 20px;
+}
+// <input>-------------------------------------------

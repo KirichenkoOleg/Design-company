@@ -1,41 +1,18 @@
 // $(function() {
     // плагины Gulp не поддерживают синтаксис ES6
 
-    // $(".header__arrow-down:first").on("click", function (event) {
-    //     event.preventDefault();
-    //     var id  = $(this).attr('href'), //Возвращает или изменяет значение атрибутов
-    //     top = $(id).offset().top; //дает координаты выбранного элем.
-    //     $('body,html').animate({scrollTop: top}, 1500);
-    // });
-
-    // $('.about__nav-menu:first').on('click','a', function(event) {
-    //     event.preventDefault();
-
-    //     $('.about__nav-item').each(function(i, elem) {
-    //         elem.classList.remove("about__nav-item_active");
-    //     });
-        
-    //     this.classList.add("about__nav-item_active");
-    //     // console.log( this );
-    //     // console.log( event.currentTarget );
-    // });
-
     var navMenu = $('.about__menu-nav').eq(0);
-    var menuBg = $('.menu-nav__item-bg').eq(0);
     var header = $('.header').eq(0);//высота хедера
     
-    $(window).on('scroll', function (e) {
-        var scrollfromtop = $(this).scrollTop();//получение текущей прокрутки
-        var headHeight = header.outerHeight();//высота элемента с учетом внутренних отступов и рамки
-
-        if( scrollfromtop > headHeight ) {
-            navMenu.addClass('about__menu-nav_scrolled');
-            // menuBg.addClass('menu-nav__item-bg_scrolled');
-        } else {
-            navMenu.removeClass('about__menu-nav_scrolled');
-            // menuBg.removeClass('menu-nav__item-bg_scrolled');
-        }
-    });
+    // $(window).on('scroll', function (e) {
+        // var scrollfromtop = $(this).scrollTop();//получение текущей прокрутки
+        // var headHeight = header.outerHeight();//высота элемента с учетом внутренних отступов и рамки
+        // if( scrollfromtop > headHeight ) {
+            // navMenu.addClass('about__menu-nav_scrolled');
+        // } else {
+            // navMenu.removeClass('about__menu-nav_scrolled');
+        // }
+    // });
 
     $('a[href*="#"]').on('click.smoothscroll', function (e) {
         var hash = this.hash;
@@ -50,8 +27,23 @@
                 scrollTop: $target.offset().top - 0
             }, 1500, 'swing', function () {
                 window.location.hash = hash;
+                return false;
             }
         );
     });
+
+$('.filter__item').on('click', function(e) {
+    var i = $(this).data('filter');
+    if( i==1 ) {
+        $('.portfolio__column').show();
+    } else {
+        $('.portfolio__column').hide();
+        $('.portfolio__column.f_'+i).show();
+    };
+    $('.filter__item').removeClass('filter__item_active');
+    $(this).addClass('filter__item_active');
+
+    return false;
+});
 
 // });

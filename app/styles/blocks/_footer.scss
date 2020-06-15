@@ -21,10 +21,16 @@
         font-size: 14px;
         color: #a4a4a4;
         font-family: $text-font;
+        @media screen and (max-width:$sm) {
+            font-size: 18px;
+        }
     }
     &__copirating {
         font-size: 14px;
         color: #6c6c6c;
         font-family: "Myriad Pro";
+        @media screen and (max-width:$sm) {
+            font-size: 18px;
+        }
     }
 }

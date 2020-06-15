@@ -4,35 +4,82 @@
     align-items: center;
     padding: 105px 0 60px;
     background-color: #f3f3f3;
+    @media screen and (max-width:$sm) {
+        padding: 80px 0 40px;
+    }
 
     &__title {
         margin-bottom: 45px;
     }
-    &__menu-nav {
+    &__filter {
         margin-bottom: 130px;
+        @media screen and (max-width:$md) {
+            margin-bottom: 90px;
+        }
+        @media screen and (max-width:$sm) {
+            margin-bottom: 80px;
+        }
     }
-    &__gallery-wrapper {
+    &__items {
         display: flex;
-        justify-content: space-between;
         flex-wrap: wrap;
-        max-width: 1100px;
-        width: 100%;
-        margin-bottom: 65px;
+        // max-width: 1100px;
+        margin: 0 -15px 50px;
+        @media screen and (max-width:$sm) {
+            margin-bottom: 30px;
+        }
     }
-    &__gallery-item {
-        display: inline-block;
-        width: 100%;
-        max-width: 536px;
-        height: 365px;
-        background-color: #eaeaea;
+    &__column {
+        flex: 0 1 50%;
+        max-width: 50%;//лечит проблему ширины в Explorer11
+        padding: 0 15px;
         margin-bottom: 15px;
-        &:nth-last-child(-n+2) {
-            // last two elem
-            margin-bottom: 0;
+        @media screen and (max-width:$sm) {
+            flex: 0 1 100%;
+            max-width: 100%;
+            text-align: center;
+        }
+    }
+    &__item {
+        img {
+            max-width: 100%;
         }
     }
     &__more {
-        border-color: #000000;
-        color: #000000;
+        transition-duration: .5s;
+        &:hover {
+            transition-duration: .2s;
+            background-color: #000000;
+            color: #ffffff;
+        }
+    }
+}
+
+.filter {
+    &__list {
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__item {
+        font-size: 15px;
+        font-family: "Lato-Bold";
+        color: #3c3c3c;
+        text-transform: uppercase;
+        margin: 0 25px;
+        cursor: pointer;
+        &_active {
+            color: #ada074;
+        }
+    }
+}
+
+.galery {
+    max-width: 1100px;
+    width: 100%;
+    @media screen and (max-width: 1100px){
+        max-width: 768px;
+        max-width: 100%;
     }
 }
