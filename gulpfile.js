@@ -85,6 +85,11 @@ function fonts() {
 		.pipe(dest(path.build.fonts));
 }
 
+function docs() {
+	return src("./build/**/*")
+		.pipe(dest("./docs"));
+}// созданиe папки для gh-pages
+
 // function datas() {
 // 	return src(path.source.data)
 // 		.pipe(dest(path.build.data));
@@ -116,6 +121,7 @@ exports.css = css;
 exports.script = script;
 exports.images = images;
 exports.clean = cleanFolder;
+exports.docs = docs;
 exports.build = build;
 exports.server = server;
 exports.default = server;

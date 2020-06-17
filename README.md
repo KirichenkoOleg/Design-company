@@ -1,13 +1,18 @@
-# Instruction:
+# Design company "Binary"
 
-## Clone the project:
+My practice project
 
-git clone https://github.com/KirichenkoOleg/Design-company.git
+## In this project I mastered:
 
-## Upload npm packages:
+* BEM
+* CSS FlexBox
+* Gulp 4
 
-npm install
+## You can watch this page here 
+<https://kirichenkooleg.github.io/Design-company/>
 
-## Create build folder and run server:
+## You can run this project locally just do:
 
-gulp server
+* clone the project: **`git clone https://github.com/KirichenkoOleg/Design-company.git`**
+* upload npm packages: **`npm install`**
+* create build folder and run server: **`gulp server`**
