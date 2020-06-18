@@ -23,7 +23,6 @@
     &__items {
         display: flex;
         flex-wrap: wrap;
-        // max-width: 1100px;
         margin: 0 -15px 50px;
         @media screen and (max-width:$sm) {
             margin-bottom: 30px;

@@ -3,7 +3,7 @@ const { src, dest, series, parallel, watch } = require('gulp'); //загружа
 const sass = require('gulp-sass'); //компилятор в css
 const uglify = require('gulp-uglify'); //подкл. пакет минифицирования .js файлов
 const concat = require('gulp-concat'); //склеивает файлы, в один
-const cleanCSS = require('gulp-clean-css'); //сжимает css файлы
+const cleanCSS = require('gulp-clean-css'); //минификация
 const del = require('del'); //удаление папки перед сборкой
 const imagemin = require('gulp-imagemin'); //оптимизация изображений
 const browserSync = require('browser-sync').create();
@@ -56,7 +56,7 @@ function css() {
 		.pipe(sourcemaps.init())// активация sourcemaps
 		.pipe(sass().on('error', sass.logError))
 		.pipe(concat('style.css'))
-		//.pipe(cleanCSS()) //минификация
+		// .pipe(cleanCSS())
 		.pipe(sourcemaps.write())// активация sourcemaps
 		.pipe(dest(path.build.css))
 		.pipe(reload({ stream: true }));
@@ -97,7 +97,7 @@ function docs() {
 
 function cleanFolder() {
 	return del(['build']);
-};//задача удаления файла или папки
+};
 
 function browser_Sync() {
 	browserSync.init({
@@ -108,13 +108,16 @@ function browser_Sync() {
 };
 
 function watcher() {
-	watch('app/index.html', html);
-	watch('app/styles/**/*.scss', css);
-	watch('app/js/*.js', script);
+	// watch('app/index.html', html);
+	// watch('app/styles/**/*.scss', css);
+	// watch('app/js/*.js', script);
+	watch('app/index.html', series(html, docs));
+	watch('app/styles/**/*.scss', series(css, docs));
+	watch('app/js/*.js', series(script, docs));
 };
 
 const build = series(cleanFolder, parallel(html, css, script, images, fonts));
-const server = series(build, parallel(watcher, browser_Sync));
+const server = series(build, docs, parallel(watcher, browser_Sync));
 
 exports.html = html;
 exports.css = css;
