@@ -3,6 +3,10 @@
     @media screen and (max-width:$md) {
         padding: 70px 0 50px;
     }
+    @media screen and (max-width:$sx) {
+        padding: 40px 0 40px;
+    }
+
     &__title {
         margin-bottom: 115px;
         @media screen and (max-width:$md) {
@@ -10,8 +14,6 @@
         }
     }
     &__container {
-        // display: flex;
-        // justify-content: space-between;
         max-width: 720px;
         margin: 0 auto;
     }
@@ -42,7 +44,7 @@
     }
     &__text {
         font-size: 14px;
-        font-family: $secondary-text-font;
+        font-family: $secondaryText-font;
         line-height: 24px;
         margin-bottom: 30px;
         @media screen and (max-width:$sm) {
@@ -66,7 +68,7 @@
     }
     &__email {
         font-size: 14px;
-        font-family: $secondary-text-font;
+        font-family: $secondaryText-font;
         a {
             text-decoration: none;
             color: #000000;
@@ -107,13 +109,17 @@
             margin-bottom: 50px;
         }
     }
-    // &__input {}
     &__label {
         font-size: 14px;
         font-family: $primary-font;
         margin: 0 0 10px 0;
         text-transform: uppercase;
         text-align: left;
+        
+        @media screen and (max-width:$sx) {
+            font-size: 16px;
+            text-align: center;
+        }
     }
     &__btn {
         font-size: 14px;
@@ -136,6 +142,9 @@
     background-color: #f8f7f7;
     font-size: 15px;
     border-top: 1px solid #000000;
+    @media screen and (max-width:$sx) {
+        font-size: 16px;
+    }
 }
 .social {
     display: flex;

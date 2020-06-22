@@ -1,8 +1,9 @@
 # Design company "Binary"
 
-My practice project
+My practice project. Here I firstly practiced BEM.
+This project has a filter on portfolio items.
 
-## In this project I mastered:
+## In this project I used:
 
 * BEM
 * CSS FlexBox

@@ -4,10 +4,14 @@
     align-items: center;
     padding: 105px 0 60px;
     background-color: #f3f3f3;
+
     @media screen and (max-width:$sm) {
         padding: 80px 0 40px;
     }
-
+    @media screen and (max-width:$sx) {
+        padding: 40px 0 40px;
+    }
+    
     &__title {
         margin-bottom: 45px;
     }
@@ -17,7 +21,7 @@
             margin-bottom: 90px;
         }
         @media screen and (max-width:$sm) {
-            margin-bottom: 80px;
+            margin-bottom: 50px;
         }
     }
     &__items {
@@ -55,21 +59,30 @@
 }
 
 .filter {
+    @media screen and (max-width:$sx) {
+        width: 100%;
+    }
+    
     &__list {
         list-style-type: none;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        @media screen and (max-width:$sx) {
+            justify-content: space-around;
+        }
     }
     &__item {
         font-size: 15px;
-        font-family: "Lato-Bold";
+        font-family: $primary-font;
         color: #3c3c3c;
         text-transform: uppercase;
         margin: 0 25px;
         cursor: pointer;
         &_active {
             color: #ada074;
+        }
+        @media screen and (max-width:$sx) {
+            font-size: 16px;
+            margin: 0 15px;
         }
     }
 }

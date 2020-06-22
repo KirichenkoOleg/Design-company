@@ -9,14 +9,9 @@
         position: absolute;
         top: 0;
         border-bottom: 1px solid #f2f2f2;
-        padding: 20px 0;
-        &_scrolled {
-            position: fixed;
-            z-index: 2;
-            overflow: hidden;
-
-            background-color: #f3f3f3;
-            border-bottom: 1px solid #ada074;
+        
+        @media screen and (max-width:$sx) {
+            border-bottom: 2px solid #f2f2f2;
         }
     }
     &__body {
@@ -32,12 +27,15 @@
     &__text {
         max-width: 700px;
         padding: 0 10px;
-        font-size: $primaryText-size;
         color: #868585;
-        font-family: $secondary-text-font;
+        font-size: $primaryText-size;
+        font-family: $secondaryText-font;
         text-align: center;
         line-height: 20.89px;
         margin: 0 auto;
+        @media screen and (max-width:$sx) {
+            font-size: 16px;
+        }
     }
 
     &__row {
@@ -65,22 +63,32 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    padding: 20px 0;
     list-style-type: none;
+    @media screen and (max-width:$sx) {
+        padding: 0;
+        flex-wrap: wrap;
+        justify-content: space-around
+    }
 
     &__item {
         padding: 0 25px;
-        text-align: center;
-        z-index: 1;
+        @media screen and (max-width:$sx) {
+            padding: 15px 10px;
+        }
     }
     &__link {
         text-decoration: none;
         text-transform: uppercase;
-        font-family: "Lato-Bold";
+        font-family: $primary-font;
         font-size: 15px;
         color: $links-color;
+        @media screen and (max-width:$sx) {
+            font-size: 18px;
+        }
     }
     &__link_active {
-        color: $active-link-color;
+        color: $activeLink-color;
     }
 }
 
@@ -118,7 +126,7 @@
         text-align: center;
         font-size: $primaryText-size;
         color: #868585;
-        font-family: $secondary-text-font;
+        font-family: $secondaryText-font;
         line-height: 1.5;
     }
 }

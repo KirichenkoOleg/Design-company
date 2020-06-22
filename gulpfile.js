@@ -21,16 +21,14 @@ const path = {
 			"app/js/script.js"
 		],
 		image: "app/img/**/*",
-		fonts: "app/fonts/**/*",
-		// data: "app/data/*.json" папка с файлами каких либо данных
+		fonts: "app/fonts/**/*"
 	},
 	build: {
 		html: "build/",
 		css: "build/css/",
 		js: "build/js/",
 		image: "build/img/",
-		fonts: "build/fonts/",
-		// data: "build/data/"
+		fonts: "build/fonts/"
 	}
 };
 
@@ -44,8 +42,8 @@ function html() {
 function script() {
 	return src(path.source.js)
 		.pipe(sourcemaps.init())
-		.pipe(uglify())
 		.pipe(concat('main.js'))
+		.pipe(uglify())
 		.pipe(sourcemaps.write())
 		.pipe(dest(path.build.js))
 		.pipe(reload({ stream: true }));
@@ -56,7 +54,7 @@ function css() {
 		.pipe(sourcemaps.init())// активация sourcemaps
 		.pipe(sass().on('error', sass.logError))
 		.pipe(concat('style.css'))
-		// .pipe(cleanCSS())
+		.pipe(cleanCSS())
 		.pipe(sourcemaps.write())// активация sourcemaps
 		.pipe(dest(path.build.css))
 		.pipe(reload({ stream: true }));
@@ -90,11 +88,6 @@ function docs() {
 		.pipe(dest("./docs"));
 }// созданиe папки для gh-pages
 
-// function datas() {
-// 	return src(path.source.data)
-// 		.pipe(dest(path.build.data));
-// };
-
 function cleanFolder() {
 	return del(['build']);
 };
@@ -108,9 +101,6 @@ function browser_Sync() {
 };
 
 function watcher() {
-	// watch('app/index.html', html);
-	// watch('app/styles/**/*.scss', css);
-	// watch('app/js/*.js', script);
 	watch('app/index.html', series(html, docs));
 	watch('app/styles/**/*.scss', series(css, docs));
 	watch('app/js/*.js', series(script, docs));

@@ -53,13 +53,18 @@
     box-sizing: border-box;
 }
 
+html {
+    font-family: sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 h1, h2, h3, h4, h5, h6, a, p, span {
     line-height: 1.0;
 }
 
 //----------------------------------------------------------------- общие стартовые стили
 
-// <input>-------------------------------------------
+// -----------------------------------------<input>--
 input[type=text],
 input[type=email],
 input[type=tel],
@@ -77,4 +82,10 @@ textarea {
     height: 117px;
     padding: 10px 20px;
 }
-// <input>-------------------------------------------
+// -----------------------------------------<input>--
+// -----------------------------------------@mixin--
+@mixin rotate($deg) {
+    -webkit-transform: rotate($deg);
+    -ms-transform: rotate($deg);
+    transform: rotate($deg);
+}
