@@ -47,14 +47,13 @@
     font-display: fallback;
 }
 
-* {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    font-family: sans-serif;
+body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -89,3 +88,4 @@ textarea {
     -ms-transform: rotate($deg);
     transform: rotate($deg);
 }
+// -----------------------------------------@mixin--

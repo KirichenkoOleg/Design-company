@@ -1,6 +1,6 @@
 .header {
     padding: 80px 0;
-    background: url('../img/BG-Header.png') no-repeat center / cover fixed;
+    background: url('../img/bg-headerPjpeg.jpg') no-repeat center / cover fixed;
     height: 100vh;
     @media screen and (max-width:$md) {
         padding: 30px 0;
@@ -41,7 +41,7 @@
         }
     }
     &__arrow-down {
-        padding: 20px 20px;
+        padding: 0px 20px;
         font-size: 17px;
         color: #ffffff;
         transition-duration: .1s;
@@ -49,7 +49,7 @@
         &:hover {
             transform: scale(1.5);
         }
-        &::before {
+        /*&::before {
             content: '';
             margin: 0;
             width: 12px;
@@ -61,7 +61,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%) rotate(-45deg);
-        }
+        }*/
         @media screen and (max-width:$sx) {
             display: none;
         }
