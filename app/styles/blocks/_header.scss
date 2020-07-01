@@ -41,27 +41,17 @@
         }
     }
     &__arrow-down {
-        padding: 0px 20px;
-        font-size: 17px;
+        padding: 0px 15px;
         color: #ffffff;
         transition-duration: .1s;
         position: relative;
         &:hover {
             transform: scale(1.5);
         }
-        /*&::before {
-            content: '';
-            margin: 0;
-            width: 12px;
-            height: 12px;
-            border-bottom: 3px solid #ffffff;
-            border-left: 3px solid #ffffff;
-
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-45deg);
-        }*/
+        svg {
+            fill: #ffffff;
+            width: 14px;
+        }
         @media screen and (max-width:$sx) {
             display: none;
         }
