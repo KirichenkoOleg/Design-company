@@ -84,18 +84,18 @@ function fonts() {
 }
 
 function docs() {
-	return src("./build/**/*")
-		.pipe(dest("./docs"));
+	return src('./build/**/*')
+		.pipe(dest('./docs'));
 }// созданиe папки для gh-pages
 
 function cleanFolder() {
-	return del(['build']);
+	return del(['build', 'docs']);
 };
 
 function browser_Sync() {
 	browserSync.init({
 		server: {
-			baseDir: "./build"
+			baseDir: './build'
 		}
 	});
 };
@@ -106,8 +106,8 @@ function watcher() {
 	watch('app/js/*.js', series(script, docs));
 };
 
-const build = series(cleanFolder, parallel(html, css, script, images, fonts));
-const server = series(build, docs, parallel(watcher, browser_Sync));
+const build = series(cleanFolder, parallel(html, css, script, images, fonts), docs);
+const server = series(build, parallel(watcher, browser_Sync));
 
 exports.html = html;
 exports.css = css;
