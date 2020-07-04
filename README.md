@@ -2,6 +2,7 @@
 
 My practice project. Here I firstly practiced BEM.
 This project has a filter on portfolio items.
+**`/docs`** folder need for work of GitHub-pages
 
 ## In this project I used:
 
@@ -17,3 +18,4 @@ This project has a filter on portfolio items.
 * clone the project: **`git clone https://github.com/KirichenkoOleg/Design-company.git`**
 * upload npm packages: **`npm install`**
 * create build folder and run server: **`gulp server`**
+* or create build folder for production: **`gulp prod`**

@@ -48,16 +48,31 @@ function script() {
 		.pipe(dest(path.build.js))
 		.pipe(reload({ stream: true }));
 }
+function scriptProd() {
+	return src(path.source.js)
+		.pipe(concat('main.js'))
+		.pipe(uglify())
+		.pipe(dest(path.build.js))
+		.pipe(reload({stream: true}));
+}
 
 function css() {
 	return src(path.source.styles)
 		.pipe(sourcemaps.init())// активация sourcemaps
 		.pipe(sass().on('error', sass.logError))
 		.pipe(concat('style.css'))
-		// .pipe(cleanCSS())
+		.pipe(cleanCSS())
 		.pipe(sourcemaps.write())// активация sourcemaps
 		.pipe(dest(path.build.css))
 		.pipe(reload({ stream: true }));
+}
+function cssProd() {
+	return src(path.source.styles)
+		.pipe(sass().on('error', sass.logError))
+		.pipe(concat('style.css'))
+		.pipe(cleanCSS())
+		.pipe(dest(path.build.css))
+		.pipe(reload({stream: true}));
 }
 
 function images() {
@@ -108,6 +123,7 @@ function watcher() {
 
 const build = series(cleanFolder, parallel(html, css, script, images, fonts), docs);
 const server = series(build, parallel(watcher, browser_Sync));
+const prod = series(cleanFolder, parallel(html, cssProd, scriptProd, images, fonts), docs);
 
 exports.html = html;
 exports.css = css;
@@ -117,4 +133,5 @@ exports.clean = cleanFolder;
 exports.docs = docs;
 exports.build = build;
 exports.server = server;
+exports.prod = prod;
 exports.default = server;
